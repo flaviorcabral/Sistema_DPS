@@ -12,9 +12,9 @@ class Meta:
 
 class Cliente(InfoAbst):
         cpf = models.PositiveIntegerField()
-        endereco = models.ManyToManyField('enderecos.Endereco')
-        os = models.ForeignKey('OS.OS')
-
-
+        endereco = models.ForeignKey('enderecos.Endereco')
+	
+	def __unicode__(self):
+         return self.nome
 
 

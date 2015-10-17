@@ -5,7 +5,7 @@ from OS.models import OS
 
 class OsAdmin(admin.ModelAdmin):
         model = OS      
-        list_display = ['status']
+        list_display = ['status', 'cliente']
         list_filter = ['status']
         save_on_top = True
 

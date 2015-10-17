@@ -1,14 +1,10 @@
 from django.contrib import admin
-from .models import Endereco      
-
-# Register your models here.
+from.models import Endereco
 
 class EnderecoAdmin(admin.ModelAdmin):
-        model = Endereco      
-        list_display = ['rua', 'cep']
-        list_filter = ['cep']
+        model = Endereco
+        list_display = ['rua', 'cidade', 'estado', 'bairro']
+        list_filter = ['rua']
         save_on_top = True
 
 admin.site.register(Endereco, EnderecoAdmin)
-
-

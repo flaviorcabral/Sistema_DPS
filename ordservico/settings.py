@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'setor', 
 )
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +57,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'ordservico.urls'
 

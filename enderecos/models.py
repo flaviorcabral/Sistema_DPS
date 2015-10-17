@@ -11,3 +11,6 @@ class Endereco(models.Model):
 	cidade  = models.CharField(max_length = 15)
 	estado = models.CharField(max_length = 15)	
 
+	def __unicode__(self):
+         return self.cep
+ 	 

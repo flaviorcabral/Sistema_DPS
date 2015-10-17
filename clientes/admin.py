@@ -7,7 +7,7 @@ from clientes.models import Cliente
 
 class ClienteAdmin(admin.ModelAdmin):
 	model = Cliente
-	list_display = ['nome', 'email']
+	list_display = ['nome', 'telefone', 'email']
 	list_filter = ['nome']
 	save_on_top = True
 
