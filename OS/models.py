@@ -28,6 +28,6 @@ class OS(models.Model):
 	status = models.CharField(max_length = 1, choices = STATUS_CHOICES, verbose_name = 'Status')
 	pago = models.CharField(max_length = 1, choices = PAGO_CHOICES, verbose_name = 'Pago') 
 	formPag = models.CharField(max_length = 1, choices = FORMA_PAG_CHOICES, name = 'Forma Pagamento')
-	servico = models.ForeignKey('servicos.Servico')
-	item = models.ForeignKey('itens.Itens')
+	servico = models.ManyToManyField('servicos.Servico')
+	item = models.ManyToManyField('itens.Itens', blank = True)
         cliente = models.ForeignKey('clientes.Cliente')

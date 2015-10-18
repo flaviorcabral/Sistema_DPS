@@ -6,7 +6,7 @@ from OS.models import OS
 class OsAdmin(admin.ModelAdmin):
         model = OS      
         list_display = ['status', 'cliente']
-        list_filter = ['status']
+       	filter_horizontal =  ('servico', 'item',)
         save_on_top = True
 
 admin.site.register(OS, OsAdmin)

@@ -12,5 +12,5 @@ class Endereco(models.Model):
 	estado = models.CharField(max_length = 15)	
 
 	def __unicode__(self):
-         return self.cep
+         return self.rua
  	 
