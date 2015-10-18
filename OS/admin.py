@@ -1,14 +1,14 @@
 from django.contrib import admin
-from OS.models import OS      
+from OS.models import Ordem_Servicos      
 
 # Register your models here.
 
 class OsAdmin(admin.ModelAdmin):
-        model = OS      
-        list_display = ['status', 'cliente']
+        model = Ordem_Servicos      
+        list_display = ['status', 'cliente', 'setor']
        	filter_horizontal =  ('servico', 'item',)
         save_on_top = True
 
-admin.site.register(OS, OsAdmin)
+admin.site.register(Ordem_Servicos, OsAdmin)
 
 # Register your models here.
