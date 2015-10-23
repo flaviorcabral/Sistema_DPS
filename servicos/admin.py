@@ -6,8 +6,8 @@ from servicos.models import Servico
 class ServicoAdmin(admin.ModelAdmin):
         model = Servico      
         list_display = ['descricao', 'setor', 'valor']
-        list_filter = ['descricao']
-        save_on_top = True
+        search_fields = ['descricao', 'valor']
+
 
 admin.site.register(Servico, ServicoAdmin)
 

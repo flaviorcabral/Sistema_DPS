@@ -8,8 +8,9 @@ from funcionario.models import Funcionario
 class FuncionarioAdmin(admin.ModelAdmin):
         model = Funcionario      
         list_display = ['nome', 'matricula']
-        filter_horizontal = ('endereco',)
-        save_on_top = True
+	search_fields = ['nome','matricul', 'funcao']
+	filter_horizontal = ('endereco',)
+
 
 admin.site.register(Funcionario, FuncionarioAdmin)
 

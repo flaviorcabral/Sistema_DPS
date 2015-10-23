@@ -5,9 +5,13 @@ from OS.models import Ordem_Servicos
 
 class OsAdmin(admin.ModelAdmin):
         model = Ordem_Servicos      
-        list_display = ['status', 'cliente', 'setor']
-       	filter_horizontal =  ('servico', 'item',)
-        save_on_top = True
+        list_display = ['numero','status', 'cliente', 'setor']
+	search_fields = ['numero']
+       	list_filter = ['status', 'cliente', 'setor']
+	filter_horizontal =  ('servico', 'item',)
+        ordering = ('-dataEnt',)
+	date_hierarchy = 'dataEnt'
+
 
 admin.site.register(Ordem_Servicos, OsAdmin)
 

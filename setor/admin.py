@@ -6,8 +6,9 @@ from setor.models import Setor
 class SetorAdmin(admin.ModelAdmin):
         model = Setor      
         list_display = ['descricao']
-        list_filter = ['descricao']
-        save_on_top = True
+#       list_filter = ['descricao']
+        search_fields = ['descricao']
+
 
 admin.site.register(Setor, SetorAdmin)
 

@@ -25,13 +25,18 @@ SECRET_KEY = 'tmkb2$4jv@ww!*55r(q1^js9ywb@+4^fs)&34_#=!3#l+)m!!^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#BB_BLOCK_FAILURES = 3
+#BB_BLOCK_INTERVAL = 1
+
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+    'flat',
+   # 'bootstrap3'
+   # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +50,8 @@ INSTALLED_APPS = (
     'itens',
     'OS',
     'servicos',
-    'setor',
+    'setor', 
+    'BruteBuster'
 #    'localflavor', 
 )
 
@@ -59,6 +65,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'BruteBuster.middleware.RequestMiddleware',	
 )
 
 
@@ -107,7 +114,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

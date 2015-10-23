@@ -23,19 +23,19 @@ class Ordem_Servicos(models.Model):
                 ('P', 'Pendente'),
         )
 
-	STATUS_SETOR = (
+	SETOR_CHOICES = (
 
-                ('H', 'Hardware'),
-                ('S', 'Software'),
+                ('H', 'Software'),
+                ('S', 'Hardware'),
         )
 
-
+	numero = models.AutoField(primary_key=True)
 	dataEnt = models.DateField()
-	dataSaida = models.DateField()
+	dataSaida = models.DateField(blank = True, null = True)
 	status = models.CharField(max_length = 1, choices = STATUS_CHOICES, verbose_name = 'Status')
 	pago = models.CharField(max_length = 1, choices = PAGO_CHOICES, verbose_name = 'Pago') 
-	formPag = models.CharField(max_length = 1, choices = FORMA_PAG_CHOICES, verbose_name = 'Forma Pagamento')
-	setor = models.CharField(max_length = 1, choices = STATUS_SETOR, verbose_name = 'Setor') 
+	formPag = models.CharField(max_length = 1, choices = FORMA_PAG_CHOICES, verbose_name = 'Forma Pagamento', blank = True, null = True)
+	setor = models.CharField(max_length = 1, choices = SETOR_CHOICES, verbose_name = 'Setor', blank = True, null = True) 
 	servico = models.ManyToManyField('servicos.Servico')
 	item = models.ManyToManyField('itens.Itens', blank = True)
         cliente = models.ForeignKey('clientes.Cliente')

@@ -6,8 +6,8 @@ from itens.models import Itens
 class ItensAdmin(admin.ModelAdmin):
         model = Itens      
         list_display = ['descricao', 'valor']
-        list_filter = ['descricao']
-        save_on_top = True
+        search_fields = ['descricao']
+
 
 admin.site.register(Itens, ItensAdmin)
 

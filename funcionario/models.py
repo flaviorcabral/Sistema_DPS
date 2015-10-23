@@ -11,7 +11,7 @@ class Meta:
 	abstract = True
 
 class Funcionario(InfoAbst):
-	matricula = models.PositiveIntegerField()
+	matricula = models.CharField(max_length = 20)
 	salario = models.DecimalField(max_digits=7, decimal_places=2, default=0) 
 	funcao = models.CharField(max_length = 20)
 	setor = models.ForeignKey('setor.Setor')
