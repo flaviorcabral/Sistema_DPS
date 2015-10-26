@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 
 # Create your models here.
 
@@ -15,8 +15,10 @@ class Cliente(InfoAbst):
        cpf = models.PositiveIntegerField(blank = True, null = True)
        cnpj = models.PositiveIntegerField(blank = True, null = True)
        endereco = models.ManyToManyField('enderecos.Endereco')
-	
+       num = models.PositiveIntegerField(blank = True, null = True)	
+       
        def __unicode__(self):
          return self.nome
 
+auditlog.register(Cliente)
 

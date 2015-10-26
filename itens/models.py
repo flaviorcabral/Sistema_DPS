@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 # Create your models here.
 
 class Itens(models.Model):
@@ -9,3 +9,5 @@ class Itens(models.Model):
 	
 	def __unicode__(self):
          return self.nome
+
+auditlog.register(Itens)

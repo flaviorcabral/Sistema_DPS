@@ -34,9 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'flat',
-   # 'bootstrap3'
-   # 'grappelli',
+    'bootstrap_admin',    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,8 +49,9 @@ INSTALLED_APPS = (
     'OS',
     'servicos',
     'setor', 
-    'BruteBuster'
-#    'localflavor', 
+    'BruteBuster',
+    'auditlog', 
+    'geoposition',
 )
 
 
@@ -65,10 +64,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'BruteBuster.middleware.RequestMiddleware',	
+    'BruteBuster.middleware.RequestMiddleware',
+    'auditlog.middleware.AuditlogMiddleware',	
 )
 
-
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 15,
+    'maxZoom': 18,
+}
 
 ROOT_URLCONF = 'ordservico.urls'
 

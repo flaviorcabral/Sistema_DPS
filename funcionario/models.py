@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 # Create your models here.
 
 class InfoAbst(models.Model):
@@ -16,3 +16,5 @@ class Funcionario(InfoAbst):
 	funcao = models.CharField(max_length = 20)
 	setor = models.ForeignKey('setor.Setor')
 	endereco = models.ManyToManyField('enderecos.Endereco')
+
+auditlog.register(Funcionario)

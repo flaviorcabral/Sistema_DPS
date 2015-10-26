@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 # Create your models here.
 
 class Ordem_Servicos(models.Model):
@@ -39,3 +39,7 @@ class Ordem_Servicos(models.Model):
 	servico = models.ManyToManyField('servicos.Servico')
 	item = models.ManyToManyField('itens.Itens', blank = True)
         cliente = models.ForeignKey('clientes.Cliente')
+        Observacoes = models.TextField(max_length = 100, blank = True, null = True) 
+ 
+
+auditlog.register(Ordem_Servicos)

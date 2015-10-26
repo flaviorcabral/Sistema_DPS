@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 # Create your models here.
 
 class Servico(models.Model):
@@ -9,3 +9,5 @@ class Servico(models.Model):
 	
 	def __unicode__(self):
          return self.descricao
+
+auditlog.register(Servico)

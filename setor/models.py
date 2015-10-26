@@ -1,5 +1,5 @@
 from django.db import models
-
+from auditlog.registry import auditlog
 # Create your models here.
 
 class Setor(models.Model):
@@ -8,3 +8,5 @@ class Setor(models.Model):
 
 	def __unicode__(self):
          return self.descricao
+
+auditlog.register(Setor)
