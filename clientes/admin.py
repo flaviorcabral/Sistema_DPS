@@ -12,6 +12,6 @@ class ClienteAdmin(admin.ModelAdmin):
 	list_display = ['nome', 'telefone', 'email']
 	search_fields = ['nome', 'email']
 	filter_horizontal = ('endereco',)
-
+	list_filter = ['nome',]
 
 admin.site.register(Cliente, ClienteAdmin)

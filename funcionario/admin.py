@@ -10,7 +10,7 @@ class FuncionarioAdmin(admin.ModelAdmin):
         list_display = ['nome', 'matricula']
 	search_fields = ['nome','matricul', 'funcao']
 	filter_horizontal = ('endereco',)
-
+	list_filter = ['nome',]
 
 admin.site.register(Funcionario, FuncionarioAdmin)
 

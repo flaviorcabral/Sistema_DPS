@@ -9,7 +9,8 @@ class OsAdmin(admin.ModelAdmin):
 	search_fields = ['numero']
        	list_filter = ['status', 'cliente', 'setor']
 	filter_horizontal =  ('servico', 'item',)
-        ordering = ('-dataEnt',)
+	list_filter = ['cliente',] 
+	ordering = ('-dataEnt',)
 	date_hierarchy = 'dataEnt'
 
 

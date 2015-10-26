@@ -7,6 +7,6 @@ class Setor(models.Model):
 	descricao = models.CharField(max_length = 50)
 
 	def __unicode__(self):
-         return self.descricao
+         return self.nome
 
 auditlog.register(Setor)
