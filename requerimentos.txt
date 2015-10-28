@@ -1,6 +1,8 @@
 # sistemaOS
-Pacotes necessarios
- Comando que exibi os pacotes ja instalados : # pip freeze.
+#Pacotes necessarios
+#Comando que exibi os pacotes ja instalados : # pip freeze.
+#Comando para instalar apartir de requerimentos.txt: #pip install -r requerimentos.txt
+
 Python 2.7 
 bootstrap-admin==0.3.6
 Django==1.8.5
