@@ -1,6 +1,7 @@
 from django.contrib import admin
 from OS.models import Ordem_Servicos      
 
+
 # Register your models here.
 
 class OsAdmin(admin.ModelAdmin):

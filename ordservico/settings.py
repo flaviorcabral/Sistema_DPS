@@ -74,6 +74,10 @@ GEOPOSITION_MAP_OPTIONS = {
     'maxZoom': 18,
 }
 
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
+
 ROOT_URLCONF = 'ordservico.urls'
 
 TEMPLATES = [

@@ -9,7 +9,7 @@ from clientes.models import Cliente
 class ClienteAdmin(admin.ModelAdmin):
 #	form = ClienteForm
 	model = Cliente
-	list_display = ['nome', 'telefone', 'email']
+	list_display = ['nome','telefone', 'email']
 	search_fields = ['nome', 'email']
 	filter_horizontal = ('endereco',)
 	list_filter = ['nome',]

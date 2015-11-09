@@ -5,9 +5,9 @@ from setor.models import Setor
 
 class SetorAdmin(admin.ModelAdmin):
         model = Setor      
-        list_display = ['descricao']
-	list_filter = ['descricao']
-        search_fields = ['descricao']
+        list_display = ['nome', 'descricao']
+	list_filter = ['nome']
+        search_fields = ['nome']
 	
 
 admin.site.register(Setor, SetorAdmin)
