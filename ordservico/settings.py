@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'OS',
     'servicos',
     'setor', 
+    'mapas',
     'BruteBuster',
     'auditlog', 
     'geoposition',
