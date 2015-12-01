@@ -12,8 +12,8 @@ class Meta:
 	abstract = True
 
 class Cliente(InfoAbst):
-       cpf = models.PositiveIntegerField(blank = True, null = True, help_text='Digitar apenas numeros', unique = True)
-       cnpj = models.PositiveIntegerField(blank = True, null = True, help_text='Digitar apenas numeros', unique = True)
+       cpf = models.PositiveIntegerField(max_length = 11, blank = True, null = True, help_text='Digitar apenas numeros', unique = True)
+       cnpj = models.PositiveIntegerField(max_length = 14, blank = True, null = True, help_text='Digitar apenas numeros', unique = True)
        endereco = models.ManyToManyField('enderecos.Endereco')
        num = models.PositiveIntegerField(blank = True, null = True)	
        

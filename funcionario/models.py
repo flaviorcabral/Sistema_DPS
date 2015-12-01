@@ -5,13 +5,13 @@ from auditlog.registry import auditlog
 class InfoAbst(models.Model):
 	nome = models.CharField(max_length = 100)
 	telefone = models.CharField(max_length = 15, help_text='Seguir o formato como exemplo: (83)11111-2222')
-	cpf = models.PositiveIntegerField(help_text='Digitar apenas numeros', unique = True)
+	cpf = models.PositiveIntegerField(max_length = 11, help_text='Digitar apenas numeros', unique = True)
 
 class Meta:
 	abstract = True
 
 class Funcionario(InfoAbst):
-	matricula = models.CharField(max_length = 20, help_text='Digitar apenas numeros', unique = True)
+	matricula = models.CharField(max_length = 5, help_text='Digitar apenas numeros', unique = True)
 	salario = models.DecimalField(max_digits=7, decimal_places=2, default=0) 
 	funcao = models.CharField(max_length = 60)
 	setor = models.ForeignKey('setor.Setor')

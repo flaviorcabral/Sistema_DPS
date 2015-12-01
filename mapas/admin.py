@@ -1,3 +1,4 @@
+
 # coding: utf-8
 from django import forms
 from django.contrib import admin
@@ -14,9 +15,10 @@ class MapasForm(forms.ModelForm):
 class MapasAdmin(admin.ModelAdmin):
         form = MapasForm
         model = Mapas
-        list_display = ['cidade', 'estado']
-        search_fields = ['cidade']
-        list_filter = ['estado',]
-
+        list_display = ['mapas']
+#        search_fields = ['cidade']
+#        list_filter = ['estado',]
+        readonly_fields = ('mapas',)
+ 
 admin.site.register(Mapas, MapasAdmin)
 
